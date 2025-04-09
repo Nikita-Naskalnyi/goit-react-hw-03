@@ -1,0 +1,20 @@
+import Contact from "../contact/Contact";
+import styles from "./ContactList.module.css";
+
+const ContactList = ({ contacts, onDelete }) => {
+  return (
+    <ul className={styles["contacts-grid"]}>
+      {contacts.map(({ id, number, name }) => (
+        <Contact
+          key={id}
+          id={id}
+          number={number}
+          name={name}
+          onDelete={onDelete}
+        />
+      ))}
+    </ul>
+  );
+};
+
+export default ContactList;
